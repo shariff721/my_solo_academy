@@ -1,0 +1,5 @@
+INSERT INTO positions (position_name)VALUES ("GoalKeeper");
+INSERT INTO positions (position_name)VALUES ("Defender");
+INSERT INTO positions (position_name)VALUES ("Midfielder");
+INSERT INTO positions (position_name)VALUES ("Forward");
+INSERT INTO positions (position_name)VALUES ("Winger");

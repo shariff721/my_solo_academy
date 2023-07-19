@@ -12,15 +12,24 @@
 </head>
 
 <body>
+    <header>
+        <h2 class="logo">Riff Soccer Academy</h2>
+        <nav class="navigation">
+            <a href="/dashboard">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
     <div class="container">
         <div class="d-flex justify-content-between">
-            <h1>Welcome {{one_user.first_name}} {{one_user.last_name}}</h1>
-            <p><a href="/logout" class="btn btn-outline-danger">Logout</a></p>
+            <h4>Welcome {{one_user.first_name}} {{one_user.last_name}}</h4>
         </div>
         <p></p>
         <div class="w-65">
-            <table class="table table-bordered border-primary">
-                <h2> ALL PLAYERS</h2>
+            <table class="table table-hover">
+                <h4> ALL PLAYERS</h4>
                 <tr>
                     <th>Player Name</th>
                     <th>Email</th>
@@ -49,50 +58,7 @@
                 <a href="/positions">View All Positions</a>
             </div>
             <p></p>
-            <div>
-                <h3>Player Goals / Objectives : </h3>
-                <table class="table table-bordered border-primary">
-                    <tr>
-                        <th>Player Name:</th>
-                        <th>Player's goals / Objectives :</th>
-                        <th>Actions</th>
-                    </tr>
-                    {% for result in all_goals %}
-                    <tr>
-                        <td>{{result.owner.first_name}}</td>
-                        <td>{{result.player_goals}}</td>
-                        <td>
-                            <a href="/show/player/{{result.owner.id}}">View</a>
-                            {% if one_user.first_name == result.owner.first_name %}
-                            <a href="/edit/goal/{{result.id}}">Edit</a> |
-                            <a href="/delete/goal/{{result.id}}">Delete</a>
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
-            <div>
-                <form action="/save/goal" method="post">
-                    {% with messages = get_flashed_messages(category_filter = ["goals"]) %}
-                    {% if messages %}
-                    {% for message in messages %}
-                    <p class="text-danger">{{message}}</p>
-                    {% endfor %}
-                    {% endif %}
-                    {% endwith %}
-                    <p></p>
-                    <div class="d-flex">
-                        <label class="form-lable" for="player_goals">Add Player Goal / Objective: </label>
-                        <p></p>
-                        <textarea name="player_goals" cols="30" rows="5"></textarea>
-                    </div>
-                    <p></p>
-                    <button class="btn btn-outline-success">Add Goal</button>
-                </form>
-            </div>
         </div>
-    </div>
     </div>
 </body>
 

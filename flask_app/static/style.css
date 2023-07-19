@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+    min-height: 85vh;
     background: url('soccer1.avif') no-repeat;
     background-size: cover;
     background-position: center;
@@ -63,7 +63,7 @@ header {
     transform: scaleX(1);
 }
 
-.navigation .btnLogin-popup {
+/* .navigation .btnLogin-popup {
     width: 130px;
     height: 50px;
     background: transparent;
@@ -81,9 +81,9 @@ header {
 .navigation .btnLogin-popup:hover {
     background: #fff;
     color: #162938;
-}
+} */
 
-.wrapper {
+/* .wrapper {
     position: relative;
     width: 400px;
     height: 440px;
@@ -98,9 +98,9 @@ header {
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-}
+} */
 
-.wrapper.active-popup {
+/* .wrapper.active-popup {
     transform: scale(1);
 }
 
@@ -150,7 +150,7 @@ header {
     border-bottom-left-radius: 20px;
     cursor: pointer;
     z-index: 1;
-}
+} */
 
 .form-box h2 {
     font-size: 2em;
@@ -227,9 +227,9 @@ header {
 }
 
 .btn {
-    width: 100%;
+    width: 150px;
     height: 45px;
-    background: #162938;
+    background: #0e70bb;
     border: none;
     outline: none;
     border-radius: 6px;

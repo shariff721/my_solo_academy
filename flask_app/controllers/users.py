@@ -123,4 +123,4 @@ def create_goal():
             "user_id": session['user_id']
         }
         goal.Goal.save_goal(data)
-        return redirect('/dashboard')
+        return redirect('/player/goals')

@@ -24,7 +24,7 @@ def update_goals():
         return redirect(request.referrer)
     else:
         goal.Goal.update_goal(request.form)
-    return redirect('/dashboard')
+    return redirect('/player/goals')
 
 
 @app.route('/player/goals')

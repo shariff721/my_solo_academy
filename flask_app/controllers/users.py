@@ -55,8 +55,7 @@ def user_dashboard():
         return redirect('/')
     logged_in_user = user.User.get_one_by_id({"id": int(session['user_id'])})
     all_players = user.User.get_all()
-    all_goals = goal.Goal.get_goals_with_user()
-    return render_template("dashboard.html", one_user=logged_in_user, all_players=all_players, all_goals=all_goals)
+    return render_template("dashboard.html", one_user=logged_in_user, all_players=all_players)
 
 
 @app.route('/show/player/<int:id>')

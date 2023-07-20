@@ -15,7 +15,7 @@
     <header>
         <h2 class="logo">Riff Soccer Academy</h2>
         <nav class="navigation">
-            <a href="#">Home</a>
+            <a href="/dashboard">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
@@ -24,7 +24,7 @@
     </header>
     <div class="container">
         <div class="d-flex justify-content-between">
-            <h4>Welcome {{one_user.first_name}} {{one_user.last_name}}</h4>
+            <h3>Welcome {{session['name']}}</h3>
         </div>
         <p></p>
         <div>
@@ -45,7 +45,7 @@
                     <td>{{result.player_goals}}</td>
                     <td>
                         <a href="/show/player/{{result.owner.id}}">View</a>
-                        {% if one_user.first_name == result.owner.first_name %}
+                        {% if session['name'] == result.owner.first_name %}
                         <a href="/edit/goal/{{result.id}}">Edit</a> |
                         <a href="/delete/goal/{{result.id}}">Delete</a>
                         {% endif %}
@@ -67,7 +67,8 @@
                 <div class="d-flex">
                     <label class="form-lable" for="player_goals">Add Player Goal / Objective: </label>
                     <p></p>
-                    <textarea name="player_goals" cols="30" rows="5"></textarea>
+                    <textarea style="background-color: rgb(213, 213, 213);" name="player_goals" cols="30"
+                        rows="5"></textarea>
                 </div>
                 <p></p>
                 <button class="btn"> Add Goal</button>

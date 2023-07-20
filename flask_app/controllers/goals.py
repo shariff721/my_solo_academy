@@ -25,3 +25,14 @@ def update_goals():
     else:
         goal.Goal.update_goal(request.form)
     return redirect('/dashboard')
+
+
+@app.route('/player/goals')
+def player_goals():
+    if "user_id" not in session:
+        flash(" You must be logged in", "login")
+        return redirect('/')
+    else:
+        all_goals = goal.Goal.get_goals_with_user()
+    return render_template("player_goals.html" , all_goals=all_goals)
+    
